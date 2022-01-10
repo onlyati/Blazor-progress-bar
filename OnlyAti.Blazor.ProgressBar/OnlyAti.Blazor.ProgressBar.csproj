@@ -5,6 +5,14 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <Company>molnar.attila28</Company>
+    <Description>https://github.com/onlyati/Blazor-progress-bar</Description>
+    <PackageProjectUrl>https://github.com/onlyati/Blazor-progress-bar</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/onlyati/Blazor-progress-bar</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <PackageTags>blazor; progress bar</PackageTags>
+    <PackageReleaseNotes>https://github.com/onlyati/Blazor-progress-bar</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 
@@ -18,6 +26,13 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
