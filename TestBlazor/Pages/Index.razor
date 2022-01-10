@@ -1,0 +1,24 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<div style="width: 500px">
+    <OnlyAti.Blazor.ProgressBar.ProgressBar Config="@Config" />
+</div>
+
+<input type="range" min="0" max="100" @oninput="@((e) => Config.PercentageValue = Convert.ToInt32(e.Value))" />
+<input type="checkbox" @bind="Config.ShowPercentage" />
+<input type="text" @bind="Config.InactiveText" />
+
+@code {
+    OnlyAti.Blazor.ProgressBar.Model.ProgressBarConfig Config = new() {
+            PercentageValue = 70,
+            InactiveText = "Suspended",
+    };
+}

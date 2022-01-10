@@ -1,0 +1,31 @@
+﻿@if(Config.ShowPercentage)
+{
+    @if(Config.PercentageValue > Config.OkLimit)
+    {
+        <div style="position: relative; width: 100%; border: 2px solid rgb(@Config.OkColor.R, @Config.OkColor.G, @Config.OkColor.B)">
+            <p style="color: rgb(@Config.StatusTextColor.R, @Config.StatusTextColor.G, @Config.StatusTextColor.B); text-align: center; margin-top: @(Config.UpBottomMargin)px; margin-bottom: @(Config.UpBottomMargin)px;">@Config.PercentageValue%</p>
+            <div style="position: absolute; top: 0; left: 0; height: 100%; width: @Config.PercentageValue%; background-color: rgb(@Config.OkColor.R, @Config.OkColor.G, @Config.OkColor.B); z-index: -1;"></div>
+        </div>
+    }
+    else if (Config.PercentageValue > Config.WarningLimit)
+    {
+        <div style="position: relative; width: 100%; border: 2px solid rgb(@Config.WarningColor.R, @Config.WarningColor.G, @Config.WarningColor.B)">
+            <p style="color: rgb(@Config.StatusTextColor.R, @Config.StatusTextColor.G, @Config.StatusTextColor.B); text-align: center; margin-top: @(Config.UpBottomMargin)px; margin-bottom: @(Config.UpBottomMargin)px;">@Config.PercentageValue%</p>
+            <div style="position: absolute; top: 0; left: 0; height: 100%; width: @Config.PercentageValue%; background-color: rgb(@Config.WarningColor.R, @Config.WarningColor.G, @Config.WarningColor.B); z-index: -1;"></div>
+        </div>
+    }
+    else
+    {
+        <div style="position: relative; width: 100%; border: 2px solid rgb(@Config.ErrorColor.R, @Config.ErrorColor.G, @Config.ErrorColor.B)">
+            <p style="color: rgb(@Config.StatusTextColor.R, @Config.StatusTextColor.G, @Config.StatusTextColor.B); text-align: center; margin-top: @(Config.UpBottomMargin)px; margin-bottom: @(Config.UpBottomMargin)px;">@Config.PercentageValue%</p>
+            <div style="position: absolute; top: 0; left: 0; height: 100%; width: @Config.PercentageValue%; background-color: rgb(@Config.ErrorColor.R, @Config.ErrorColor.G, @Config.ErrorColor.B); z-index: -1;"></div>
+        </div>
+    }
+}
+else
+{
+    <div style="position: relative; width: 100%; border: 2px solid rgb(@Config.InactiveColor.R, @Config.InactiveColor.G, @Config.InactiveColor.B)">
+        <p style="color: rgb(@Config.StatusTextColor.R, @Config.StatusTextColor.G, @Config.StatusTextColor.B); text-align: center; margin-top: @(Config.UpBottomMargin)px; margin-bottom: @(Config.UpBottomMargin)px;">@Config.InactiveText</p>
+        <div style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; background-color: rgb(@Config.InactiveColor.R, @Config.InactiveColor.G, @Config.InactiveColor.B); z-index: -1;"></div>
+    </div>
+}
